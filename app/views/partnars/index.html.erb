@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Partnars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pid</th>
+      <th>Name</th>
+      <th>Color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @partnars.each do |partnar| %>
+      <tr>
+        <td><%= partnar.pid %></td>
+        <td><%= partnar.name %></td>
+        <td><%= partnar.color %></td>
+        <td><%= link_to 'Show', partnar %></td>
+        <td><%= link_to 'Edit', edit_partnar_path(partnar) %></td>
+        <td><%= link_to 'Destroy', partnar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= form_for(@partnar, :url => {:controller => 'partnars', :action => 'create'}) do |f| %>
+  <%= f.text_field :pid %><br />
+  <%= f.text_field :name %><br />
+  <%= f.select :color, [["red","red"],["blue","blue"],["green","green"],["orange","orange"],["biolet","biolet"],["skyblue","skyblue"]] %><br />
+  <%= f.submit "決定" %><br />
+<% end %>

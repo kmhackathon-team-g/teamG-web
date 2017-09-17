@@ -1,0 +1,2 @@
+class Partnar < ApplicationRecord
+end
