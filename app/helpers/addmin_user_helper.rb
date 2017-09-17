@@ -1,0 +1,2 @@
+module AddminUserHelper
+end
