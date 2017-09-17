@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pid:</strong>
+  <%= @partnar.pid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @partnar.name %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @partnar.color %>
+</p>
+
+<%= link_to 'Edit', edit_partnar_path(@partnar) %> |
+<%= link_to 'Back', partnars_path %>

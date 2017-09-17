@@ -1,0 +1,32 @@
+<%= form_for(partnar) do |f| %>
+  <% if partnar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(partnar.errors.count, "error") %> prohibited this partnar from being saved:</h2>
+
+      <ul>
+      <% partnar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pid %>
+    <%= f.text_field :pid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
